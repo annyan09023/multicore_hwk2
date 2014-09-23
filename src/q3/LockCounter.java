@@ -20,6 +20,11 @@ public class LockCounter extends Counter {
 
     @Override
     public int getCount() {
-        return count;
+    	int myId;
+    	myId=Main.mapThread.get(Thread.currentThread());
+    	this_lock.lock(myId);
+        int this_count=count;
+        this_lock.unlock(myId);
+        return this_count;
     }
 }

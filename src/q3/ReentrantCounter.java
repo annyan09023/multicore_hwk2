@@ -5,9 +5,10 @@ import java.util.concurrent.locks.ReentrantLock;
 // TODO
 // Use ReentrantLock to protect the count
 public class ReentrantCounter extends Counter {
-    @Override
+    
+    private ReentrantLock lock = new ReentrantLock();
+    @Override 
     public void increment() {
-    	ReentrantLock lock = new ReentrantLock();
     	lock.lock();
     	count++;
     	lock.unlock();
@@ -15,6 +16,9 @@ public class ReentrantCounter extends Counter {
 
     @Override 
     public int getCount() {
-        return count;
+    	lock.lock();
+        int this_count=count;
+        lock.unlock();
+        return this_count;
     }
 }
