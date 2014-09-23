@@ -4,7 +4,7 @@ package q3;
 // Implement Fast Mutex Algorithm
 public class FastMutexLock implements MyLock {
 	private volatile int open_id; //-1 refers door open
-	private boolean flag[];
+	private volatile boolean flag[];
 	private volatile int last;
 	private int Thread_num;
     public FastMutexLock(int numThread) {

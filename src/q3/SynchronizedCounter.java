@@ -9,7 +9,7 @@ public class SynchronizedCounter extends Counter {
     }
 
     @Override 
-    public int getCount() {
+    public synchronized int getCount() {
         return count;
     }
 }

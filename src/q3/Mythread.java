@@ -17,9 +17,10 @@ public class Mythread extends Thread{
 	}
 	public void run(){
 		//System.out.println("times "+times);
-		for (int i=0; i< times; i++){
+		//for (int i=0; i< times; i++){
+		while(true){
 			counter.increment();
-			//System.out.println("thread "+Main.mapThread.get(Thread.currentThread())+" running");
+			//System.out.println("thread "+Main.mapThread.get(Thread.currentThread()a)+" running");
 		}
 	}
 
